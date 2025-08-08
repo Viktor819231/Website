@@ -549,7 +549,7 @@ function App() {
                     <strong>⏰ Wait for Others:</strong> Game starts when all players are ready
                   </div>
                 </div>
-                <img src={require('./images/complete draft.png')} alt="Complete draft interface showing ready players" className="draft-image" />
+                <img src={require('./images/completedraft.png')} alt="Complete draft interface showing ready players" className="draft-image" />
               </div>
             </div>
 
