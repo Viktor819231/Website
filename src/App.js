@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import draftImage from './images/draft.png';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -73,8 +72,8 @@ function App() {
             </h1>
             
             <p className="hero-subtitle">
-              Join the ultimate Democraciv competitive community with democratic governance, 
-              ELO ranking system, and enforced fair play rules.
+              Join the Democraciv competitive community with democratic governance, 
+              ELO ranking system, and enforced fair play rules for a better civ 5 experience.
             </p>
 
             {/* Key Selling Points */}
