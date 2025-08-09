@@ -67,12 +67,12 @@ function App() {
           <div className={`hero-text ${isVisible ? 'animate' : ''}`}>
             <h1 className="hero-title">
               DEMOCRACIV
-              <span className="highlight"> COMPETITIVE </span>
+              <span className="highlight"> No quit Civ 5 </span>
               DISCORD SERVER
             </h1>
             
             <p className="hero-subtitle">
-              Join the Democraciv competitive community with democratic governance, 
+              Join the Democraciv civ 5 multipayer community with democratic governance, 
               ELO ranking system, and enforced fair play rules for a better civ 5 experience.
             </p>
 
