@@ -39,7 +39,7 @@ function App() {
   };
 
   const joinDiscord = () => {
-    window.open('https://discord.gg/ASSnBjyt', '_blank');
+    window.open('https://discord.gg/nwcrh7uG9y', '_blank');
   };
 
   return (
@@ -322,7 +322,7 @@ function SidebarTabs() {
               <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
                 <button
                   style={{ background: '#00d4ff', color: '#181c2f', border: 'none', borderRadius: 8, padding: '10px 22px', fontWeight: 700, fontSize: '1.08rem', cursor: 'pointer', boxShadow: '0 2px 8px #00d4ff44', marginBottom: 0 }}
-                  onClick={() => window.open('https://discord.gg/ASSnBjyt', '_blank')}
+                  onClick={() => window.open('https://discord.gg/nwcrh7uG9y', '_blank')}
                 >
                   Join Discord
                 </button>
@@ -343,7 +343,7 @@ function SidebarTabs() {
                 </button>
                 <button
                   style={{ background: '#00e0ff', color: '#181c2f', border: 'none', borderRadius: 8, padding: '10px 22px', fontWeight: 700, fontSize: '1.08rem', cursor: 'pointer', boxShadow: '0 2px 8px #00e0ff44', marginBottom: 0 }}
-                  onClick={() => window.open('https://discord.com/channels/ASSnBjyt', '_blank')}
+                  onClick={() => window.open('https://discord.gg/nwcrh7uG9y', '_blank')}
                 >
                   #Draft / #LFG
                 </button>

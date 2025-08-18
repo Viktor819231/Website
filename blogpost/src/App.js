@@ -25,11 +25,7 @@ function App() {
   };
 
   const joinDiscord = () => {
-    // Scroll to rules section first
-    const rulesSection = document.querySelector('.rules-summary.primary-rules');
-    if (rulesSection) {
-      rulesSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.open('https://discord.gg/nwcrh7uG9y', '_blank');
   };
 
   return (
@@ -394,10 +390,7 @@ function App() {
             <p>By clicking below, you agree to follow all server rules and participate in our democratic community</p>
             <button 
               className="btn btn-massive discord-massive"
-              onClick={() => {
-                // Now actually join Discord
-                window.open('https://discord.gg/ASSnBjyt', '_blank');
-              }}
+              onClick={joinDiscord}
             >
               🏛️ JOIN DISCORD SERVER
             </button>

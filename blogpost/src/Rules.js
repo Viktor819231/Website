@@ -4,7 +4,7 @@ import './Rules.css';
 function Rules() {
   const joinDiscord = () => {
     // Civilization V Discord Server Invite
-    window.open('https://discord.gg/ASSnBjyt', '_blank');
+    window.open('https://discord.gg/nwcrh7uG9y', '_blank');
   };
 
   return (
