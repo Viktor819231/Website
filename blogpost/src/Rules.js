@@ -1,76 +1,66 @@
 import React from 'react';
-import './Rules.css';
+import React from 'react';
 
 function Rules() {
   const joinDiscord = () => {
-    // Civilization V Discord Server Invite
     window.open('https://discord.gg/nwcrh7uG9y', '_blank');
   };
-
   return (
-    <div className="rules-page">
-      <div className="rules-container">
-        <h1 className="rules-title">🎯 Core Server Rules</h1>
-        <p className="rules-subtitle">READ BEFORE JOINING - These rules are STRICTLY ENFORCED through our democratic court system</p>
-        
-        <div className="rules-grid">
-          <div className="rule-card priority">
-            <div className="rule-icon">🏆</div>
-            <h3>Victory Conduct</h3>
-            <p><strong>MANDATORY:</strong> Play for your own victory. No suiciding into neighbors or removing military to lose your capital.</p>
-            <div className="rule-details">
-              <small>⚖️ Violation = Court trial + Prison time</small>
-            </div>
-          </div>
-          
-          <div className="rule-card priority">
-            <div className="rule-icon">🚫</div>
-            <h3>No Rage Quitting</h3>
-            <p><strong>ZERO TOLERANCE:</strong> You cannot quit once a game begins. Stay until elimination or victory.</p>
-            <div className="rule-details">
-              <small>⚖️ Automatic punishment for quitters</small>
-            </div>
-          </div>
-          
-          <div className="rule-card priority">
-            <div className="rule-icon">🤝</div>
-            <h3>Fair Play</h3>
-            <p><strong>REQUIRED:</strong> No pregame collusion, exploits, cheats, or shift-moves. No EUI enhanced demographics.</p>
-            <div className="rule-details">
-              <small>⚖️ Cheating = Immediate trial</small>
-            </div>
-          </div>
-          
-          <div className="rule-card">
-            <div className="rule-icon">💬</div>
-            <h3>Community Standards</h3>
-            <p>Free speech valued. Harassment prohibited. No stream sniping or sharing private game info.</p>
-            <div className="rule-details">
-              <small>🛡️ Democratic community protection</small>
-            </div>
-          </div>
-          
-          <div className="rule-card">
-            <div className="rule-icon">⚖️</div>
-            <h3>Rule Enforcement</h3>
-            <p>All rule violations are handled through our democratic court system with 12-citizen juries. Punishments range from 2 days to 2 months in prison depending on offense history.</p>
-            <div className="rule-details">
-              <small>⚠️ There are no warnings - follow the rules or face trial!</small>
-            </div>
-          </div>
+    <div style={{
+      minHeight: '100vh',
+      background: '#181818',
+      color: '#00ff00',
+      fontFamily: 'monospace',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      letterSpacing: 1,
+      fontSize: 22
+    }}>
+      <div style={{
+        background: '#111',
+        border: '2px solid #00ff00',
+        borderRadius: 8,
+        padding: '40px 32px',
+        boxShadow: '0 0 24px #00ff0033',
+        textAlign: 'center',
+        maxWidth: 420
+      }}>
+        <div style={{ fontSize: 32, fontWeight: 'bold', marginBottom: 18, textShadow: '0 0 8px #00ff00' }}>
+          Civ 5 Multiplayer No quit
         </div>
-
-        {/* Big Discord CTA */}
-        <div className="discord-cta">
-          <h2>Ready to Join Our Democratic Civilization?</h2>
-          <p>By clicking below, you agree to follow all server rules and participate in our democratic community</p>
-          <button 
-            className="btn btn-massive discord-massive"
-            onClick={joinDiscord}
-          >
-            🏛️ JOIN DISCORD SERVER
-          </button>
+        <div style={{ fontSize: 18, marginBottom: 32, color: '#fff', textShadow: '0 0 4px #00ff00' }}>
+          Oldschool rules. No rage quitters. Just play.
         </div>
+        <button
+          onClick={joinDiscord}
+          style={{
+            background: '#000',
+            color: '#00ff00',
+            border: '2px solid #00ff00',
+            borderRadius: 6,
+            fontFamily: 'monospace',
+            fontSize: 20,
+            padding: '12px 36px',
+            cursor: 'pointer',
+            boxShadow: '0 0 12px #00ff00',
+            marginTop: 8,
+            textTransform: 'uppercase',
+            letterSpacing: 2,
+            transition: 'background 0.2s, color 0.2s'
+          }}
+          onMouseOver={e => {
+            e.target.style.background = '#00ff00';
+            e.target.style.color = '#000';
+          }}
+          onMouseOut={e => {
+            e.target.style.background = '#000';
+            e.target.style.color = '#00ff00';
+          }}
+        >
+          Join Discord
+        </button>
       </div>
     </div>
   );
