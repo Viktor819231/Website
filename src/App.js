@@ -13,80 +13,68 @@ function App() {
       <audio ref={audioRef} src="/audio/RobDougan-ClubbedToDeath.mp3" autoPlay loop />
       <div style={{
         minHeight: '100vh',
-        background: '#393939',
-        color: '#bdbdbd',
-        fontFamily: 'Segoe UI, Arial, sans-serif',
+        background: '#222',
         display: 'flex',
-        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        fontFamily: 'monospace',
       }}>
         <div style={{
-          fontSize: 72,
-          fontWeight: 700,
-          letterSpacing: 2,
-          color: '#444',
-          marginBottom: 0,
-          textAlign: 'center',
-          textTransform: 'uppercase',
-          opacity: 0.7,
-          textShadow: '0 0 24px #000, 0 0 2px #fff2',
-          userSelect: 'none',
-        }}>
-          CIV 5 Multiplayer
-  </div>
-        <div style={{
-          fontSize: 38,
-          fontWeight: 700,
-          color: '#888',
-          letterSpacing: 2,
-          marginBottom: 40,
-          textAlign: 'center',
-          textTransform: 'uppercase',
-          opacity: 0.5,
-          userSelect: 'none',
-        }}>
-          [NO QUIT]
-        </div>
-        <div style={{
-          background: '#232323',
-          borderRadius: 8,
-          boxShadow: '0 2px 16px #0008',
-          padding: '32px 36px',
-          margin: '0 auto',
-          minWidth: 320,
+          border: '3px solid #00ff41',
+          borderRadius: 12,
+          boxShadow: '0 0 24px 2px #00ff41, 0 0 80px 2px #00ff4166',
+          padding: '40px 32px 32px 32px',
+          minWidth: 400,
           maxWidth: '90vw',
           textAlign: 'center',
+          background: 'rgba(20,20,20,0.7)',
         }}>
+          <div style={{
+            fontSize: 48,
+            fontWeight: 700,
+            color: '#00ff41',
+            marginBottom: 32,
+            textShadow: '0 0 16px #00ff41, 0 0 2px #fff2',
+            fontFamily: 'monospace',
+            letterSpacing: 2,
+            userSelect: 'none',
+            whiteSpace: 'pre-line',
+          }}>
+            {`Civ 5 Multiplayer No\nquit`}
+          </div>
           <button
             onClick={joinDiscord}
             style={{
-              background: '#444',
-              color: '#bbb',
-              border: 'none',
-              borderRadius: 4,
-              fontFamily: 'inherit',
-              fontSize: 22,
-              padding: '12px 48px',
+              background: 'transparent',
+              color: '#00ff41',
+              border: '4px solid #00ff41',
+              borderRadius: 6,
+              fontFamily: 'monospace',
+              fontSize: 32,
+              padding: '12px 32px',
               cursor: 'pointer',
               fontWeight: 700,
               marginTop: 8,
-              boxShadow: '0 2px 8px #0003',
-              transition: 'background 0.2s, color 0.2s',
+              marginBottom: 8,
+              boxShadow: '0 0 16px #00ff41',
               outline: 'none',
               textTransform: 'uppercase',
               letterSpacing: 2,
+              transition: 'background 0.2s, color 0.2s, box-shadow 0.2s',
+              textShadow: '0 0 8px #00ff41',
             }}
             onMouseOver={e => {
-              e.target.style.background = '#222';
+              e.target.style.background = '#00ff4122';
               e.target.style.color = '#fff';
+              e.target.style.boxShadow = '0 0 32px #00ff41, 0 0 8px #00ff41';
             }}
             onMouseOut={e => {
-              e.target.style.background = '#444';
-              e.target.style.color = '#bbb';
+              e.target.style.background = 'transparent';
+              e.target.style.color = '#00ff41';
+              e.target.style.boxShadow = '0 0 16px #00ff41';
             }}
           >
-            Join Discord
+            JOIN DISCORD
           </button>
         </div>
       </div>
