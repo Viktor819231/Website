@@ -6,7 +6,7 @@ function App() {
     if (audioRef.current) {
       audioRef.current.play().catch(() => {});
     }
-    window.open('https://discord.gg/nwcrh7uG9y', '_blank');
+    window.open('https://discord.gg/pzPqx9CFMG', '_blank');
   };
   return (
     <>

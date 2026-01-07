@@ -1,0 +1,47 @@
+{
+  "bot-config": {
+    "lobbyName": "",
+    "advertisingTexts": {"default": "Join our game!"},
+    "isEnabled": true,
+    "forceRelobby": false,
+    "relobbyTriggeredAt": ""
+  },
+  "bot-stats": {
+    "bot1": {
+      "botId": "bot1",
+      "lastPing": "",
+      "region": "",
+      "lastRelobby": "",
+      "lastGameStart": "",
+      "amountOfConnected": 0,
+      "connectedPlayers": { }
+    },
+    "bot2": {
+      "botId": "bot2",
+      "lastPing": "",
+      "region": "EU-West",
+      "lastRelobby": "",
+      "lastGameStart": "",
+      "amountOfConnected": 0,
+      "connectedPlayers": {"TimeAndDate": "PlayerName"}
+    },
+    "bot3": {
+      "botId": "bot3",
+      "lastPing": "",
+      "region": "US-West",
+      "lastRelobby": "",
+      "lastGameStart": "",
+      "amountOfConnected": 0,
+      "connectedPlayers": {"TimeAndDate": "PlayerName"}
+    },
+    "bot4": {
+      "botId": "bot4",
+      "lastPing": "",
+      "region": "Asia",
+      "lastRelobby": "",
+      "lastGameStart": "",
+      "amountOfConnected": 0,
+      "connectedPlayers": {"TimeAndDate": "PlayerName"}
+    }
+  }
+}

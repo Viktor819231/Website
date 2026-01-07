@@ -1,17 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
+import App from './App';
 import Rules from './Rules';
+import Botstatus from './Botstatus';
 
-function App() {
+function AppRouter() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<App />} />
         <Route path="/rules" element={<Rules />} />
+        <Route path="/Botstatus" element={<Botstatus />} />
       </Routes>
     </Router>
   );
 }
 
-export default App;
+export default AppRouter;
