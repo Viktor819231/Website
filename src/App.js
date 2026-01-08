@@ -1,7 +1,31 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { database } from './firebase';
+import { ref, onValue } from 'firebase/database';
 
 function App() {
   const audioRef = useRef(null);
+  const [lobbyCount, setLobbyCount] = useState(null);
+  
+  useEffect(() => {
+    try {
+      const botConfigRef = ref(database, 'bot-config');
+      onValue(botConfigRef, (snapshot) => {
+        const config = snapshot.val();
+        if (config && config.lobbyName) {
+          // Extract x/6 pattern from lobby name
+          const match = config.lobbyName.match(/(\d+)\/(\d+)/);
+          if (match) {
+            setLobbyCount({ current: match[1], total: match[2] });
+          } else {
+            setLobbyCount(null);
+          }
+        }
+      });
+    } catch (err) {
+      console.error('Error fetching lobby count:', err);
+    }
+  }, []);
+  
   const joinDiscord = () => {
     if (audioRef.current) {
       audioRef.current.play().catch(() => {});
@@ -42,6 +66,17 @@ function App() {
           }}>
             {`Civ 5 Multiplayer No\nquit`}
           </div>
+          {lobbyCount && (
+            <div style={{
+              fontSize: 24,
+              color: '#00ff41',
+              marginBottom: 24,
+              fontFamily: 'monospace',
+              textShadow: '0 0 8px #00ff41',
+            }}>
+              {lobbyCount.current}/{lobbyCount.total} currently in lobby
+            </div>
+          )}
           <button
             onClick={joinDiscord}
             style={{

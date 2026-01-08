@@ -5,6 +5,7 @@ import './Botstatus.css';
 
 function Botstatus() {
   const [botData, setBotData] = useState(null);
+  const [botConfig, setBotConfig] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,6 +15,7 @@ function Botstatus() {
   const fetchBotData = () => {
     try {
       const botStatsRef = ref(database, 'bot-stats');
+      const botConfigRef = ref(database, 'bot-config');
       
       onValue(botStatsRef, (snapshot) => {
         const data = snapshot.val();
@@ -29,6 +31,13 @@ function Botstatus() {
       }, (error) => {
         setError(error.message);
         setLoading(false);
+      });
+      
+      onValue(botConfigRef, (snapshot) => {
+        const config = snapshot.val();
+        if (config) {
+          setBotConfig(config);
+        }
       });
     } catch (err) {
       setError(err.message);
@@ -98,7 +107,7 @@ function Botstatus() {
       }
     });
     
-    return timeline.sort((a, b) => a.time - b.time);
+    return timeline.sort((a, b) => b.time - a.time);
   };
 
   // Create activity graph bars for selected time range
@@ -202,9 +211,39 @@ function Botstatus() {
         </div>
       </div>
 
+      {botConfig && (
+        <div className="bot-config-section">
+          <h2>Bot Configuration</h2>
+          <div className="config-content">
+            <div className="config-row">
+              <span className="config-label">Lobby Name:</span>
+              <span className="config-value">{botConfig.lobbyName || 'N/A'}</span>
+            </div>
+            <div className="config-row">
+              <span className="config-label">Enabled:</span>
+              <span className="config-value">{botConfig.isEnabled ? 'Yes' : 'No'}</span>
+            </div>
+            <div className="config-row">
+              <span className="config-label">Force Relobby:</span>
+              <span className="config-value">{botConfig.forceRelobby ? 'Yes' : 'No'}</span>
+            </div>
+            {botConfig.advertisingTexts && (
+              <div className="config-advertising">
+                <span className="config-label">Advertising Messages:</span>
+                <div className="advertising-list">
+                  {Object.entries(botConfig.advertisingTexts).map(([key, text]) => (
+                    <div key={key} className="ad-message">{text}</div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       <div className="bots-grid">
         {botData && Object.entries(botData)
-          .sort(([, botA], [, botB]) => {
+          .sort(([idA, botA], [idB, botB]) => {
             // Sort by status first (online > warning > offline)
             const statusA = getBotStatus(botA.stats?.lastPing);
             const statusB = getBotStatus(botB.stats?.lastPing);
@@ -214,10 +253,8 @@ function Botstatus() {
               return statusOrder[statusA] - statusOrder[statusB];
             }
             
-            // Then sort by most recent ping time
-            const timeA = botA.stats?.lastPing ? new Date(botA.stats.lastPing).getTime() : 0;
-            const timeB = botB.stats?.lastPing ? new Date(botB.stats.lastPing).getTime() : 0;
-            return timeB - timeA;
+            // Keep stable order if same status (don't swap online bots)
+            return 0;
           })
           .map(([botId, bot]) => {
             const status = getBotStatus(bot.stats?.lastPing);

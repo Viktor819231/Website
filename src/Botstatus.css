@@ -26,6 +26,73 @@
   margin: 0 auto;
 }
 
+.bot-config-section {
+  max-width: 1400px;
+  margin: 0 auto 30px auto;
+  background: rgba(74, 222, 128, 0.05);
+  border: 2px solid #4ade80;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(74, 222, 128, 0.15);
+}
+
+.bot-config-section h2 {
+  color: #4ade80;
+  margin: 0 0 20px 0;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.config-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.config-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: rgba(74, 222, 128, 0.05);
+  border-left: 3px solid #4ade80;
+  border-radius: 4px;
+}
+
+.config-label {
+  font-weight: bold;
+  color: #4ade80;
+}
+
+.config-value {
+  color: #4ade8099;
+}
+
+.config-advertising {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(74, 222, 128, 0.05);
+  border-left: 3px solid #4ade80;
+  border-radius: 4px;
+}
+
+.advertising-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.ad-message {
+  color: #4ade8099;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
 .header h1 {
   color: #4ade80;
   font-size: 2.5em;
